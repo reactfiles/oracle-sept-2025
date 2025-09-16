@@ -1,0 +1,37 @@
+Extensions used
+===============
+Mithril Emmet : By FallenMax
+Prettier - Code formatter : By Prettier
+open in browser : By TechER
+Live Server : By Ritwick Dey
+Auto Rename Tag : By Jun Han
+ES7+ React/Redux/React-Native snippets : By dsznajder
+Material Icon Theme : By Philipp Kief
+One Monokai Theme : By Joshua Azemoh
+Bracket Pair Color DLW : By Bracket Pair Color DLW
+
+Resources
+=================
+https://developer.mozilla.org
+https://html.spec.whatwg.org
+https://wiki.csswg.org/
+
+Paste Bin Links
+=================
+DAY 1 : 
+-------
+https://p.ip.fi/Kbrm
+https://p.ip.fi/A7vA
+https://p.ip.fi/5c1R
+https://p.ip.fi/jCSr
+https://p.ip.fi/PcfE
+https://p.ip.fi/Msrc
+https://p.ip.fi/eIxA
+https://p.ip.fi/pw03
+https://p.ip.fi/VrRu
+https://p.ip.fi/U3lM
+https://p.ip.fi/abCs
+https://p.ip.fi/xAEU
+https://p.ip.fi/eJsU
+https://p.ip.fi/iwiF
+https://p.ip.fi/aG2f 

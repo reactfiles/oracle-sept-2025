@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply, Bind</title>
+    <script>
+        let ironman = {
+            firstname : "Tony",
+            lastname : "Stark",
+            sayfullname : function(power, city){
+                return this.firstname+" "+this.lastname+"'s power is : "+power+ " is from "+city;
+            }
+        };
+        let hulk = {
+            firstname : "Bruce",
+            lastname : "Benner",
+        };
+        let captainAmerica = {
+            firstname : "Steve",
+            lastname : "Roggers",
+        };
+
+        /*         
+        console.log(ironman.sayfullname());
+        console.log(ironman.sayfullname.call(hulk));
+        console.log(ironman.sayfullname.call(captainAmerica)); 
+        */
+       /* 
+        console.log(ironman.sayfullname());
+        console.log(ironman.sayfullname.apply(hulk));
+        console.log(ironman.sayfullname.apply(captainAmerica)); 
+        */
+       /* 
+       console.log(ironman.sayfullname());
+       console.log(ironman.sayfullname.bind(hulk)());
+       console.log(ironman.sayfullname.bind(captainAmerica)()); 
+       */
+
+        // console.log(ironman.sayfullname(6));
+        console.log(ironman.sayfullname.call(hulk, 6, "Hyderabad"));
+        console.log(ironman.sayfullname.apply(captainAmerica,[7,"Kolkata"])); 
+        let hulkdetails = ironman.sayfullname.bind(hulk);
+        console.log("a few movements later")
+        console.log(hulkdetails(8,"Jhansi")); 
+        console.log(hulkdetails(5,"Bangalore")); 
+        console.log(hulkdetails(4,"Pune")); 
+        console.log(hulkdetails(6,"Mumbai"));  
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

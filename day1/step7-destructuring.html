@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        /* 
+        var hero = {
+            title : "Ironman",
+            power : 6,
+            firstname : "Tony",
+            lastname : "Stark",
+            price : 100
+        };
+        var temphero = hero; 
+        console.log(hero.title); // ??? Ironman
+        console.log(temphero.title); // ??? Ironman
+        temphero.title = "Ironmonger";
+        console.log(temphero.title); // ??? Ironmonger
+        console.log(hero.title);// ??? Ironmonger
+        temphero.price = "$ "+temphero.price;
+        console.log(temphero.price); // ??? Ironmonger
+        console.log(hero.price);// ??? Ironmonger
+        */
+
+        var hero = {
+            title : "Ironman",
+            power : 6,
+            firstname : "Tony",
+            lastname : "Stark",
+            price : 100
+        };
+
+        /* 
+        var hero_title = hero.title; 
+        var hero_power = hero.power; 
+        var hero_firstname = hero.firstname; 
+        var hero_lastname = hero.lastname; 
+        var hero_price = hero.title; 
+
+        console.log(hero.title); // ??? Ironman
+        console.log(hero_title); // ??? Ironman
+
+        hero_title = "Ironmonger";
+
+        console.log(hero.title); // ??? Ironman
+        console.log(hero_title); // ??? Ironmonger 
+        */
+
+       /*  
+       var {  title : hero_title, 
+              power : hero_power,
+              firstname : hero_firstname,
+              lastname : hero_lastname,
+              price : hero_price
+            } = hero;
+
+        console.log(hero.title); // ??? Ironman
+        console.log(hero_title); // ??? Ironman
+
+        hero_title = "Ironmonger";
+
+        console.log(hero.title); // ??? Ironman
+        console.log(hero_title); // ??? Ironmonger 
+        console.log(hero_power); // ???  
+        console.log(hero_firstname); // ???  
+        console.log(hero_lastname); // ???  
+        console.log(hero_price); // ???   
+        // 
+        */
+        /*        
+        var {  title : title, 
+              power : power,
+              firstname : firstname,
+              lastname : lastname,
+              price : price
+            } = hero; 
+             */
+       /* 
+       var { title, power, firstname, lastname, price } = hero;
+
+        console.log(hero.title); // ??? Ironman
+        console.log(title); // ??? Ironman
+
+        title = "Ironmonger";
+
+        console.log(hero.title); // ??? Ironman
+        console.log(title); // ??? Ironmonger 
+        console.log(power); // ???  
+        console.log(firstname); // ???  
+        console.log(lastname); // ???  
+        console.log(price); // ???    
+        */
+        /* 
+        var temphero = { ...hero }; // spread syntax // shallow referrence
+        console.log(temphero.price); // ???    
+        temphero.price = 200;
+        console.log(temphero.title); // ??? Ironmonger 
+        console.log(temphero.power); // ???  
+        console.log(temphero.firstname); // ???  
+        console.log(temphero.lastname); // ???  
+        console.log(temphero.price); // ???    
+        console.log(hero.price); // ???    
+        */
+
+        var temphero = JSON.parse(JSON.stringify(hero)); // spread syntax // deep referrence
+        console.log(temphero.price); // ???    
+        temphero.price = 200;
+        console.log(temphero.title); // ??? Ironmonger 
+        console.log(temphero.power); // ???  
+        console.log(temphero.firstname); // ???  
+        console.log(temphero.lastname); // ???  
+        console.log(temphero.price); // ???    
+        console.log(hero.price); // ???    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

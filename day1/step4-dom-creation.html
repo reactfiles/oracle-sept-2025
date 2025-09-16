@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: silver;
+            border: 1px solid darkslategray;
+            height: 500px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin: 2px;
+        }
+    </style>
+    <script>
+        function clickHandler(){
+            // alert("you clicked the button");
+            var box = document.createElement("div");
+            box.setAttribute("class", 'box');
+            var r = Math.round(Math.random() * 255);
+            var g = Math.round(Math.random() * 255);
+            var b = Math.round(Math.random() * 255);
+            box.setAttribute("style","background-color:rgba("+r+","+g+","+b+",1)")
+            document.getElementById("container").appendChild(box);
+        };
+        function removeFirstBoxHandler(){
+            var box = document.getElementById("container").firstChild;
+            if(box){
+                // var box = document.getElementById("container").children[3];
+                document.getElementById("container").removeChild(box);
+            }else{
+                alert("nothing to remove")
+            }
+        }
+        function removeLastBoxHandler(){
+            var box = document.getElementById("container").lastChild;
+            if(box){
+                document.getElementById("container").removeChild(box);
+            }else{
+                alert("nothing to remove")
+            }
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", clickHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", removeFirstBoxHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click", removeLastBoxHandler);
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <hr>
+    <div id="container"></div>
+</body>
+</html>

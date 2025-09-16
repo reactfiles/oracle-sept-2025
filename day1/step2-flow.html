@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun3(){
+            console.log("log from fun3 which was called on body onload")
+        };
+        function fun2(){
+            console.log("log from fun2 window addEventListener load")
+        };
+        function fun1(){
+            console.log("log from fun1 which was called on DOMContentLoaded")
+        };
+        window.addEventListener("load", fun2);
+        document.addEventListener("DOMContentLoaded", fun1);// fastest way to access the DOM
+        // react
+        // angular
+        // vue
+    </script>
+</head>
+<body onload="fun3()">
+    <h1>Placeholder</h1>
+</body>
+</html>

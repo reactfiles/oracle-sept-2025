@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script>
+       /*  var shopping_cart = {
+            title : "My Shopping Cart",
+            getCostPrice : function(){
+                return 100
+            },
+            getSellingPrice : function(){
+                var scope = this;
+                var calculateProfit = function(){
+                    return scope.getCostPrice() * .2; 
+                };
+                return this.getCostPrice()+calculateProfit();
+            }
+        };
+        console.log(shopping_cart.getSellingPrice());// ???  */
+
+        /*         
+        var shopping_cart = {
+            title : "My Shopping Cart",
+            getCostPrice : function(){
+                return 100
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * .2; 
+                };
+                return this.getCostPrice()+calculateProfit.call(this);
+            }
+        };
+        console.log(shopping_cart.getSellingPrice());// ???  
+        */
+
+        /*         
+        var shopping_cart = {
+            title : "My Shopping Cart",
+            getCostPrice : function(){
+                return 100
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * .2; 
+                };
+                // console.log(this.title);
+                // return this.getCostPrice()+calculateProfit.call(this);
+                // return this.getCostPrice()+calculateProfit.apply(this);
+                return this.getCostPrice()+calculateProfit.bind(this)();
+            }
+        };
+        console.log(shopping_cart.getSellingPrice());// ??? 
+        // 
+        */ 
+        var getCostPrice = function(){
+            return 1000;
+        };
+
+        var shopping_cart = {
+            title : "My Shopping Cart",
+            getCostPrice : () => {
+                return 100
+            },
+            getSellingPrice : () => {
+                var calculateProfit = function {
+                    return this.getCostPrice() * .2; 
+                };
+                return this.getCostPrice()+calculateProfit();
+            }
+        };
+        console.log(shopping_cart.getSellingPrice());// ??? 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
