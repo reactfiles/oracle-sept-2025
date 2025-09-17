@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+       console.log("log before promise is declared", "line 8",1);
+       let promise = new Promise((resolve,reject)=>{
+           setTimeout(()=>{
+               console.log("log inside promise is called", "line 11",3)
+               true ? resolve([91,7,2,5]) : reject("Error : Promise was rejected")
+           },2000);
+       });
+       setTimeout(()=>{
+        console.log("this is another delay after the promise","line 16",4)
+       },2000);
+       console.log("log after promise is declared", "line 18",2);
+       promise
+       .then(function(res){
+           console.log(res," first then ");
+           return res.filter(val => val < 10);
+       })
+       .then(function(res){
+           console.log(res," second then ");
+           return res.reduce((initVal, val) => initVal+val, 0);
+       })
+       .then(function(res){
+           console.log(res," third then ");
+       })
+       .catch(function(err){
+           console.log(err)
+       })
+       .finally(function(){
+           console.log("promise is now complete");
+       }); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

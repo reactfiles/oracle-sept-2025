@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual DOM</title>
+    <style>
+        ol{
+            list-style: none;
+        }
+        .box{
+            background-color: silver;
+            padding: 5px;
+            text-align: center;
+            width: 150px;
+            margin-right: 2px;
+            font-family: sans-serif;
+            float: left;
+        }
+        .box:hover{
+            background-color: rgb(54, 47, 106);
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+    <script>
+        /* function init(){
+            let h1 = document.createElement("h1");
+                h1.setAttribute("class","player");
+                h1.textContent = "Welcome to your life";
+                document.getElementById("root").appendChild(h1);
+        }
+        document.addEventListener("DOMContentLoaded", init); */
+         function init(){
+            let list = document.createElement("ol");
+            let item1 = document.createElement("li");
+                item1.textContent = "List Item 1";
+                item1.setAttribute("class","box")
+            let item2 = document.createElement("li");
+                item2.textContent = "List Item 2";
+                item2.setAttribute("class","box")
+            let item3 = document.createElement("li");
+                item3.textContent = "List Item 3";
+                item3.setAttribute("class","box")
+            let item4 = document.createElement("li");
+                item4.textContent = "List Item 4";
+                item4.setAttribute("class","box")
+            let item5 = document.createElement("li");
+                item5.textContent = "List Item 5";
+                item5.setAttribute("class","box")
+            list.appendChild(item1);
+            list.appendChild(item2);
+            list.appendChild(item3);
+            list.appendChild(item4);
+            list.appendChild(item5);
+                document.getElementById("root").appendChild(list);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

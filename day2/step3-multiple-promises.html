@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+        let promise1 = async function () {
+            return await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    false ? resolve("response from Promise 1") : reject("Error : Promise 1")
+                }, 1000);
+            })
+        };
+        let promise2 = async function () {
+            return await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    true ? resolve("response from Promise 2") : reject("Error : Promise 2")
+                }, 2000);
+            })
+        };
+        let promise3 = async function () {
+            return await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    true ? resolve("response from Promise 3") : reject("Error : Promise 3")
+                }, 500);
+            })
+        };
+        let promise4 = async function () {
+            return await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    false ? resolve("response from Promise 4") : reject("Error : Promise 4")
+                }, 400);
+            })
+        };
+        let promise5 = async function () {
+            return await new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    true ? resolve("response from Promise 5") : reject("Error : Promise 5")
+                }, 5000);
+            })
+        };
+
+        // all promises must resolve 
+        // any of these promise must resolve 
+        // fastest promise to either resolves or rejects
+        // all the promises must complete their job
+       /*  
+       Promise
+        .all([promise1(),promise2(),promise3(),promise4(),promise5()])
+        .then(res => console.log(res))
+        .catch(err => console.log(err)) 
+        */
+       /* 
+       Promise
+       .any([promise1(),promise2(),promise3(),promise4(),promise5()])
+       .then(res => console.log(res))
+       .catch(err => console.log(err)) 
+       */
+     /*  
+     Promise
+      .race([promise1(),promise2(),promise3(),promise4(),promise5()])
+      .then(res => console.log(res))
+      .catch(err => console.log(err))  
+      */
+     Promise
+      .allSettled([promise1(),promise2(),promise3(),promise4(),promise5()])
+      .then(res => console.log(res))
+      .catch(err => console.log(err))  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

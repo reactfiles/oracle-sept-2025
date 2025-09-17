@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <style>
+        .box{
+            background-color: crimson;
+            color: papayawhip;
+            font-family: sans-serif;
+            text-align: center;
+            width: 400px;
+            padding: 15px;
+            margin: auto;
+        }
+    </style> -->
+    <style>
+        ol{
+            list-style: none;
+        }
+        .box{
+            background-color: silver;
+            padding: 5px;
+            text-align: center;
+            width: 150px;
+            margin-right: 2px;
+            font-family: sans-serif;
+            float: left;
+        }
+        .box:hover{
+            background-color: rgb(54, 47, 106);
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+       /*  
+       function init(){
+            let h1 = React.createElement("h1",{className : "box"},"Welcome to your life !!!");
+            ReactDOM.createRoot(document.getElementById("root")).render(h1);
+        };
+        document.addEventListener("DOMContentLoaded", init); 
+        */
+       /* function init(){
+            // elements
+            let item1 = React.createElement("li",{className : "box"},"List Item 1");
+            let item2 = React.createElement("li",{className : "box"},"List Item 2");
+            let item3 = React.createElement("li",{className : "box"},"List Item 3");
+            let item4 = React.createElement("li",{className : "box"},"List Item 4");
+            let item5 = React.createElement("li",{className : "box"},"List Item 5");
+            let list = React.createElement("ol",{},[item1, item2, item3, item4, item5]);
+            ReactDOM.createRoot(document.getElementById("root")).render(list);
+        };
+        document.addEventListener("DOMContentLoaded", init);  */
+    </script>
+    <script type="text/babel">
+        // component 
+        let Elm = function(props){
+            return <article>
+                    <h2>{ props.oracle }</h2>
+                        <ol>
+                            <li>List Item 1</li>
+                            <li>List Item 2</li>
+                            <li>List Item 3</li>
+                            <li>List Item 4</li>
+                            <li>List Item 5</li>
+                    </ol>
+                    </article>
+        };
+        ReactDOM.createRoot(document.getElementById("root")).render(<div><Elm oracle="First List"/><Elm oracle="Second List"/><Elm oracle="Third List"/><Elm oracle="Fourth List"/></div>);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

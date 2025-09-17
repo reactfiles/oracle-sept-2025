@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+       /*  
+        class Person {
+            // properties
+                // private
+                // public
+                // static
+            constructor(){
+                // super()
+            }
+            // methods
+                // get and set
+                // private
+                // public
+                // static
+        } 
+        */
+       class Person{
+           ability;
+           constructor(pability){
+            this.ability = pability;
+           }
+       };
+
+       let person = new Person("i can run");
+    //    console.log(person.ability);
+
+     class Hero extends Person{
+        // public property
+        title = "default title";
+        firstname = "default firstname";
+        lastname = "default lastname";
+        // private property
+        #power = 5;
+        static version = 1001;
+        // constructor
+        constructor(fname, lname, nability){
+            super(nability);
+            this.firstname = fname;
+            this.lastname = lname;
+        }
+        // public method
+        fullname(){
+            return this.firstname+" "+this.lastname;
+        }
+        // private method
+        #myprivatemethod(){
+            return "can not be accessed outside the class";
+        }
+        // static method
+        static mystaticmethod(){
+            return "can be accessed only on the class";
+        }
+        // getter
+        get power(){
+            return this.#power;
+        }
+        // setter
+        set power(npower){
+            this.#power = npower;
+        }
+     };
+
+     let hero = new Hero("Bruce","Wayne","i can fly");
+     console.log(hero.fullname());
+     console.log(hero.firstname);
+     console.log(hero.lastname);
+     console.log(hero.power);// getter
+     hero.power = 10; // setter
+     console.log(hero.power);// getter
+     console.log(Hero.version);// accessing static property
+     console.log(hero.ability);// accessing inherited property
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

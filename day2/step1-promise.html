@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+        // new Promise().then("handle response").catch("handle errors").finally("will announce that the promise is complete")
+        let promise = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                true ? resolve("Success : Promise was resolved") : reject("Error : Promise was rejected")
+            },2000);
+        });
+
+        /* Then can handle both the response and error */
+        /* 
+        promise.then(function(res){
+            console.log(res)
+        }, function(err){
+            console.log(err)
+        }); 
+        */
+       promise
+       .then(function(res){
+           console.log(res)
+       })
+       .catch(function(err){
+           console.log(err)
+       })
+       .finally(function(){
+           console.log("promise is now complete")
+       }); 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

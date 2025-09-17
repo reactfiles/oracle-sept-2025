@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script type="module">
+       import Person from "./modules/person.js";
+       import { Avenger } from "./modules/hero.js";
+       import { SuperHero } from "./modules/superhero.js";
+
+        let person = new Person("i can run");
+        let hero = new Avenger("Bruce", "Wayne", "i can fly");
+        let superhero = new SuperHero(9 , "i can fight");
+        console.log(superhero.rage);
+        console.log(superhero.ability);
+        console.log(hero.fullname());
+        console.log(hero.firstname);
+        console.log(hero.lastname);
+        console.log(hero.power);// getter
+        hero.power = 10; // setter
+        console.log(hero.power);// getter
+        console.log(Avenger.version);// accessing static property
+        console.log(hero.ability);// accessing inherited property
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
